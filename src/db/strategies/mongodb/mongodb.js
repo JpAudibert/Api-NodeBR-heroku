@@ -17,8 +17,8 @@ class MongoDB extends ICrud {
     return this._connection.readyState
   }
 
-  async static connect() {
-    await Mongoose.connect(process.env.MONGODB_CONNECTION,
+  static connect() {
+    Mongoose.connect(process.env.MONGODB_CONNECTION,
       { useNewUrlParser: true })
       .then(() => console.log("Conectou fei"))
       .catch(() => console.log("Deu ruim fei"))
