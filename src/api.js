@@ -37,7 +37,7 @@ const mapRoutes = (instance, methods) => {
 }
 
 const main = async () => {
-  const connection = await Mongo.connect()
+  const connection = Mongo.connect()
   const context = new Context(new Mongo(connection, HeroiSchema))
 
   const connectionPostgres = await Postgres.connect()
